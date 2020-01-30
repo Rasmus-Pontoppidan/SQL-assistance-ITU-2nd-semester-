@@ -1,0 +1,20 @@
+Create table:
+
+CREATE TABLE <name of table>
+(
+<attribute1> <type1> <type2>... <type n>,
+<attribute2> <type1> <type2>... <type n>,
+<attribute n> <type1> <type2>... <type n>
+);
+----
+Delete table:
+
+DROP TABLE <name>
+----
+Insert values in table:
+
+insert into <name> VALUES (type1, type 2... type n)
+----
+Delete values from table:
+
+DELETE FROM <name>
