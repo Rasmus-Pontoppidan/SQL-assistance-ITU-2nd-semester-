@@ -3,9 +3,16 @@ Create table:
 CREATE TABLE <name of table>
 (
 <attribute1> <type1> <type2>... <type n>,
+  CONSTRAINT ...
 <attribute2> <type1> <type2>... <type n>,
 <attribute n> <type1> <type2>... <type n>
 );
+---
+Alter table:
+
+ALTER TABLE <name> ADD <attribute> <type>
+
+ALTER TABLE <name> ALTER <attribute> SET DEFAULT <value>
 ----
 Delete table:
 
@@ -18,3 +25,8 @@ insert into <name> VALUES (type1, type 2... type n)
 Delete values from table:
 
 DELETE FROM <name>
+----
+Create Domain:
+
+CREATE DOMAIN <name_DOMAIN> AS <type>
+CHECK (VALUE IN ('<value1>', '<value2>', '<value n>'))
