@@ -1,0 +1,37 @@
+Select component: // Allows duplicates
+
+SELECT <components> // * = everything
+FROM component    // From one specific table
+[WHERE component] // What table rows to be selected. Can take comparators, booleans, "BETWEEN / AND", "IN", "LIKE", and NULL
+                  // multiple conditions allowed with "AND" command.
+[GROUP BY component] // Rows are grouped when one or more columns have same value. Aggregation applied to each group separately.
+[HAVING component]  // Retrieves groups satisying condition. Only used with GROUP BY.
+[ORDER BY component] // Each (and multiple) column(s) in SELECT clause can be used to order output by. Can order ASC or DESC.
+----
+Remove duplicates:
+
+SELECT DISTINCT ...
+----
+"Local attribute":
+
+SELECT <attribute>/30 AS <name> // the division is an example
+---
+Join Queries: //merging rows from different tables
+
+SELECT <components>
+FROM <table1>, <table2>, <table n>  //prevent ambiguity by <table1>.<attribute>
+WHERE <condition>
+AND <condition>   //optional
+
+OR
+
+SELECT <components>               //Inner join
+FROM <table1> AS <X> INNER JOIN SUPPLIES AS <Y>
+ON (X.<attribute> = Y.<attribute>)
+
+SELECT Outer.<components>, joined.<components>     // Left outer join. Each row from left table is kept.
+FROM <table> AS Outer LEFT OUTER JOIN SUPPLIES AS Joined
+ON (R.<attribute> = S.<attribute>)
+
+// Right outer join does the opposite
+// Full outer join keeps both table's rows in full
